@@ -1,0 +1,20 @@
+package hello;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Program4 {
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver");
+WebDriver driver=new ChromeDriver();
+driver.get("http://www.google.com");
+driver.findElement(By.linkText("Sign in")).click();
+driver.findElement(By.partialLinkText("Sign")).click();
+driver.findElement(By.id("identifierId")).sendKeys("rsugu1983@gmail.com");
+
+}
+
+}

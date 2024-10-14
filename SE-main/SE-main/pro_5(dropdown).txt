@@ -1,0 +1,31 @@
+package hello;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Program5 {
+
+public static void main(String[] args) throws InterruptedException{
+
+System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver");
+WebDriver driver=new ChromeDriver();
+driver.get("https://portal2.passportindia.gov.in/AppOnlineProject/user/RegistrationBaseAction");
+driver.manage().window().maximize();
+Select passportoffice = new Select(driver.findElement(By.name("dcdrLocation")));
+
+passportoffice.selectByIndex(5);
+
+Thread.sleep(2000);
+
+passportoffice.selectByValue("1");
+
+Thread.sleep(2000); 
+passportoffice.selectByVisibleText("Chennai");
+
+Thread.sleep(2000);
+
+
+
+}
+}

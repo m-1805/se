@@ -1,0 +1,36 @@
+package program11;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.interactions.Actions;
+public class Program11 {
+public static void main(String[] args) throws InterruptedException
+{System.setProperty("webdriver.chrome.driver","C:\\Users\\Hxtreme\
+\Desktop\\chromedriver.exe");
+WebDriver driver=new ChromeDriver();
+driver.get("https://google.com");
+driver.findElement(By.name("q")).sendKeys("passport seva");
+driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+driver.get("https://portal2.passportindia.gov.in/AppOnlineProject/user
+/RegistrationBaseAction");
+driver.manage().window().maximize();
+Select passportoffice = new
+Select(driver.findElement(By.name("dcdrLocation")));
+passportoffice.selectByIndex(1);
+driver.findElement(By.id("emailloginSameyes")).click();
+driver.findElement(By.id("hintQues")).click();
+Select hintques = new Select(driver.findElement(By.id("hintQues")));
+hintques.selectByVisibleText("Birth City");
+driver.findElement(By.xpath("//*[@id='passOffice']"));
+Actions actions = new Actions(driver);
+actions.moveToElement(driver.findElement(By.xpath("//*[@id='pass
+Office']"))).perform();
+Thread.sleep(1000);
+actions.moveToElement(driver.findElement(By.id("passportoffices2"
+))).click();
+actions.perform();
+Thread.sleep(1000);
+}}

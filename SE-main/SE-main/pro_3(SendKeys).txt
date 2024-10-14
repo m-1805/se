@@ -1,0 +1,22 @@
+package hello;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Program3 {
+
+public static void main(String[] args) {
+
+System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver");
+WebDriver driver=new ChromeDriver();
+driver.get("http://www.google.com");
+driver.findElement(By.name("q")).sendKeys("selenium");
+driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+driver.findElement(By.name("Tg7LZd")).click();
+
+
+
+}
+
+}

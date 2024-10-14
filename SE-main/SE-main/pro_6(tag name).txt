@@ -1,0 +1,17 @@
+Program 6: Develop a test To Locate a Frame Using Tag Name
+packagenewpackage;
+importorg.openqa.selenium.By;
+importorg.openqa.selenium.WebDriver;
+importorg.openqa.selenium.chrome.ChromeDriver;
+public class selenium6 {
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+System.setProperty("webdriver.chrome.driver","/home/skasc/Downloads/chromedriver");
+WebDriver driver = new ChromeDriver();
+driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_button_test");
+driver.manage().window().maximize();
+driver.switchTo().frame("iframeResult");
+driver.findElement(By.xpath("/html/body/button")).click();
+driver.switchTo().defaultContent();
+}
+}

@@ -1,0 +1,18 @@
+package hello;
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Program2 {
+
+public static void main(String[] args) throws InterruptedException{
+
+System.setProperty("webdrive.chrome.driver","home/skasc/Downloads/chromedrive");
+WebDriver driver=new ChromeDriver();
+driver.get("http://www.google.com");
+System.out.println("Website is opened Successfully");
+Thread.sleep(5000);
+driver.close();
+
+}
+
+}
